@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Care Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game">
+        <div id="selectAnimal">
+            <h2>Select an Animal</h2>
+            <button onclick="selectAnimal('Cat')">Cat</button>
+            <button onclick="selectAnimal('Dog')">Dog</button>
+            <button onclick="selectAnimal('Bird')">Bird</button>
+        </div>
+        <div id="animalCare" style="display:none;">
+            <h2 id="animalName"></h2>
+            <div id="stats">
+                <div>Energy: <span id="energy">100</span></div>
+                <div class="progress-bar" id="energy-bar"></div>
+                <div>Happiness: <span id="happiness">100</span></div>
+                <div class="progress-bar" id="happiness-bar"></div>
+                <div>Comfort: <span id="comfort">100</span></div>
+                <div class="progress-bar" id="comfort-bar"></div>
+            </div>
+            <div id="actions">
+                <button onclick="performAction('feed')">Feed</button>
+                <button onclick="performAction('play')">Play</button>
+                <button onclick="performAction('comfort')">Comfort</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
