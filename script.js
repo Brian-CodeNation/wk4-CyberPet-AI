@@ -10,14 +10,14 @@ class Animal {
 
     decreaseStats = () => {
         this.energy = Math.max(0, this.energy - 1);
-        this.happiness = Math.max(0, this.happiness - 1);
-        this.comfort = Math.max(0, this.comfort - 1);
+        this.happiness = Math.max(0, this.happiness - 3);
+        this.comfort = Math.max(0, this.comfort - 2);
     }
 
     performAction = (action) => {
         switch(action) {
             case 'feed':
-                this.energy = Math.min(100, this.energy + 5);
+                this.energy = Math.min(100, this.energy + 3);
                 break;
             case 'play':
                 this.happiness = Math.min(100, this.happiness + 5);
@@ -35,6 +35,7 @@ class Cat extends Animal {
     }
 
     // You can add specific methods or properties for Cat here
+
 }
 
 class Dog extends Animal {
@@ -95,7 +96,7 @@ const updateStats = () => {
 }
 
 const checkGameOver = () => {
-    if (currentAnimal.energy === 0 && currentAnimal.happiness === 0 && currentAnimal.comfort === 0) {
+    if (currentAnimal.energy === 0 || currentAnimal.happiness === 0 || currentAnimal.comfort === 0) {
         clearInterval(statInterval);
         alert('Game Over! Your animal didn\'t make it.');
         resetGame();
